@@ -12,12 +12,15 @@ const ViewItems = memo(({width, NUM, container, currentItems, wheelEvent}) => {
         'justifyContent': 'center',
         'gridTemplateColumns': 'repeat(5, 1fr)',
         'gridGap': ' 10px',
-        'margin': ' 0 auto'
+        'margin': ' 0 auto',
+        'transition': 'all 3s',
+
     }), [width]);
 
     const Item = useMemo(() => ({
         'width': `${NUM}px`,
         'height': `100%`,
+        'transition': 'all 3s',
     }), [NUM]);
 
     return (

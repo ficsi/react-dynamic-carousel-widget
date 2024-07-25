@@ -1,11 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Play with React</title>
 </head>
 <body>
+<style>
+    @keyframes slidein {
+        from {
+            height: 50%;
+            transform: scale(0.5);
+            opacity: 1;
+        }
+        to {
+            height:100%; /*This will change for each element */
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    .observed {
+        background-color: red;
+        animation: slidein 0.5s forwards;
+    }
+    .observed:last-child{
+        opacity: 0;
+    }
+</style>
 <ul>
     <li>npm init</li>
     <li>install all dependencies presented in package.json</li>
