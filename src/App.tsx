@@ -3,6 +3,7 @@ import useDebounce from "./useDebounce";
 import ViewItems from "./ListItemd";
 import Layout from "./Layout";
 
+//TODO: refactor received data to in the follow way: url + option_params + object_ID + object_dimensions
 const REACT_APP_DATA_URL = "https://picsum.photos/v2/list?page=2&limit=100";
 
 const fetchData = async (REACT_APP_DATA_URL: string) => {

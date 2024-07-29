@@ -5,7 +5,7 @@ const ViewItems = memo(({width, NUM, container, currentItems, wheelEvent}) => {
     const Container = useMemo(() => ({
         'position': 'relative',
         'left': `${50}%`,
-        'transform': 'translateX(-50%)',
+        'transform': 'translate(-50%)',
         'display': 'flex',
         'justifyContent': 'center',
         'gridTemplateColumns': 'repeat(5, 1fr)',
@@ -17,7 +17,8 @@ const ViewItems = memo(({width, NUM, container, currentItems, wheelEvent}) => {
 
     const Item = useMemo(() => ({
         'width': `${NUM}px`,
-        'height': `100%`,
+        'height': `${NUM}px`,
+        'objectFit':'cover'
 
     }), [NUM]);
 
@@ -31,7 +32,7 @@ const ViewItems = memo(({width, NUM, container, currentItems, wheelEvent}) => {
                         <picture>
                             <source
                                 type="image/webp"/>
-                            <img style={Item} src={
+                            <img loading="lazy" style={Item} src={
                                 item !== null ? item?.download_url : null
                             } alt={item?.author}/>
                         </picture>
